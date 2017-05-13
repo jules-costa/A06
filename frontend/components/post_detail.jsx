@@ -16,7 +16,7 @@ class PostDetail extends React.Component {
     return (
       <section className="post-detail">
         <h1>{post.title}</h1>
-        <h3>{post.body}</h3>
+        <h4>{post.body}</h4>
       </section>
     );
   }
