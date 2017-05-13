@@ -9,7 +9,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Route exact path='/posts' component={PostsIndexContainer} />
+        <Route path='/posts' component={PostsIndexContainer} />
         <Route path='/posts' component={PostFormContainer} />
         <Route path='/api/posts/:id' component={PostDetailContainer} />
       </div>

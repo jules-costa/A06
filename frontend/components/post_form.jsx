@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import merge from 'lodash/merge';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -8,27 +9,34 @@ class PostForm extends React.Component {
       title: "",
       body: ""
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
+    this.updateBody = this.updateBody.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      title: e.target.value,
-      body: e.target.body
-    });
+  updateTitle(e) {
+    this.setState({title: e.target.value});
   }
 
-  handleClick(e) {
+  updateBody(e) {
+    this.setState({body: e.target.value});
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
-    this.props.createPost(this.state);
+    this.props.createPost(this.state).then(
+      () => this.setState({
+        title: "",
+        body: ""
+      })
+    );
   }
 
   render () {
     return (
-      <form className="new-post-form" onSubmit={() => this.handleClick}>
-        <input type="text" value={this.state.title} placeholder="Title" onChange={() => this.handleChange} />
-        <input type="text" value={this.state.body} placeholder="Body" onChange={() => this.handleChange} />
+      <form className="new-post-form" onSubmit={this.handleSubmit}>Create New Post
+        <input type="text" value={this.state.title} placeholder="Title" onChange={this.updateTitle} />
+        <input type="text" value={this.state.body} placeholder="Body" onChange={this.updateBody} />
         <button>Submit</button>
       </form>
     );
