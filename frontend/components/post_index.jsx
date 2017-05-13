@@ -1,4 +1,5 @@
 import React from 'react';
+import PostIndexItem from './post_index_item';
 
 class PostIndex extends React.Component {
 
@@ -7,8 +8,13 @@ class PostIndex extends React.Component {
   }
 
   render () {
+    const { posts } = this.props;
     return (
-      <h1>Hello</h1>
+      <section className="postindex">
+        <ul>
+          {posts.map(post => <PostIndexItem key={post.id} post={post} />)}
+        </ul>
+      </section>
     );
   }
 
