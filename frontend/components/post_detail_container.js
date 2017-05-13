@@ -7,7 +7,11 @@ const mapStateToProps = (state, { match }) => ({
   post: onePost(state, match.params.id)
 });
 
+const mapDispatchToProps = dispatch => ({
+  fetchPost: id => dispatch(fetchPost(id))
+});
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(PostDetail);

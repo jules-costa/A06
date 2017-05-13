@@ -19,3 +19,7 @@ export const fetchAllPosts = () => dispatch => {
 export const fetchPost = (id) => dispatch => {
   return APIUtil.fetchPost(id).then(post => dispatch(receivePost(post)));
 };
+
+export const createPost = (newPost) => dispatch => {
+  return APIUtil.createNewPost(newPost).then(post => dispatch(receivePost));
+};
