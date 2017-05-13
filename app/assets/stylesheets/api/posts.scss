@@ -5,3 +5,17 @@
 .active {
   font-weight: 700;
 }
+
+.post-index-item > a {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.post-index-item >a:hover {
+  font-weight: 700;
+}
+
+.post-index-item {
+  list-style: none;
+  padding: 6px;
+}
