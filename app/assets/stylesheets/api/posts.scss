@@ -26,6 +26,15 @@ ul.postindex {
   align-items: center;
 }
 
+button {
+  margin: 8px;
+}
+
+.post-title {
+  padding: 8px;
+}
+
+
 .post-index-item {
   list-style: none;
   padding: 6px;
@@ -54,4 +63,20 @@ ul.postindex {
   font-family: sans-serif;
   border: 2px solid grey;
   border-radius: 6px;
+}
+
+.edit-post-form {
+  display: flex;
+  width: 200px;
+  height: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid grey;
+  border-radius: 6px;
+  font-family: sans-serif;
+}
+
+a.edit-link {
+  text-decoration: underline;
 }

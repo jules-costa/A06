@@ -26,3 +26,11 @@ export const deletePost = (id) => {
     url: `/api/posts/${id}`
   });
 };
+
+export const updatePost = (post) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/posts/${post.id}`,
+    data: {post}
+  });
+};

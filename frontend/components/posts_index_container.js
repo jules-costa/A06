@@ -3,7 +3,8 @@ import { fetchAllPosts, deletePost } from '../actions/post_actions';
 import PostIndex from './post_index';
 import { allPosts } from '../reducers/selectors';
 
-const mapStateToProps = state => ({
+
+const mapStateToProps = (state, { match }) => ({
   posts: allPosts(state)
 });
 

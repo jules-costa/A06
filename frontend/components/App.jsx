@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import PostsIndexContainer from './posts_index_container';
 import PostFormContainer from './post_form_container';
 import PostDetailContainer from './post_detail_container';
+import EditPostContainer from './edit_post_container';
 
 class App extends React.Component {
   render () {
@@ -11,7 +12,8 @@ class App extends React.Component {
       <div>
         <Route exact path='/' component={PostsIndexContainer} />
         <Route exact path='/' component={PostFormContainer} />
-        <Route path='/api/posts/:id' component={PostDetailContainer} />
+        <Route exact path='/api/posts/:id' component={PostDetailContainer} />
+        <Route path='/api/posts/:id/edit' component={EditPostContainer} />
       </div>
     );
   }

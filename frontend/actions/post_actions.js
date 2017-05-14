@@ -33,3 +33,7 @@ export const createPost = (newPost) => dispatch => {
 export const deletePost = (id) => dispatch => {
   return APIUtil.deletePost(id).then(postToRemove => dispatch(removePost(postToRemove)));
 };
+
+export const updatePost = id => dispatch => {
+  return APIUtil.updatePost(id).then(postToUpdate => dispatch(receivePost(postToUpdate)));
+};
