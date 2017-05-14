@@ -1,6 +1,10 @@
 // Place all the styles related to the api/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  display: flex;
+  justify-content: center;
+}
 
 .active {
   font-weight: 700;
@@ -15,8 +19,11 @@
   font-weight: 700;
 }
 
-.post-index {
-  
+ul.postindex {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: center;
 }
 
 .post-index-item {
@@ -36,11 +43,6 @@
   font-family: sans-serif;
 }
 
-body {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
 
 .post-detail {
   display: flex;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAllPosts } from '../actions/post_actions';
+import { fetchAllPosts, deletePost } from '../actions/post_actions';
 import PostIndex from './post_index';
 import { allPosts } from '../reducers/selectors';
 
@@ -7,8 +7,9 @@ const mapStateToProps = state => ({
   posts: allPosts(state)
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchAllPosts: () => dispatch(fetchAllPosts())
+const mapDispatchToProps = (dispatch) => ({
+  fetchAllPosts: () => dispatch(fetchAllPosts()),
+  destroyPost: id => dispatch(deletePost(id))
 });
 
 export default connect(

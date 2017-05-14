@@ -11,10 +11,12 @@ class PostIndex extends React.Component {
   }
 
   render () {
-    const { posts } = this.props;
+    const { posts, destroyPost } = this.props;
     return (
       <ul className="postindex">
-        {posts.map(post => <PostIndexItem key={post.id} post={post} />)}
+        {posts.map(post =>
+          <PostIndexItem key={post.id} post={post} destroyPost={destroyPost} />
+        )}
       </ul>
     );
   }
