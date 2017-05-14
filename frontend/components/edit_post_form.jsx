@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import merge from 'lodash/merge';
 
 class EditPostForm extends React.Component {
@@ -26,7 +26,9 @@ class EditPostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const newPost = merge({}, this.state);
-    this.props.updatePost(newPost);
+    this.props.updatePost(newPost).then(() =>
+      this.props.history.push('/')
+    );
   }
 
   render () {

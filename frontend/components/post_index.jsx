@@ -14,6 +14,7 @@ class PostIndex extends React.Component {
     const { posts, destroyPost, updatePost } = this.props;
     return (
       <ul className="postindex">
+        <h1>All Posts!</h1>
         {posts.map(post =>
           <PostIndexItem key={post.id} post={post} destroyPost={destroyPost} updatePost={updatePost} />
         )}

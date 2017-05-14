@@ -17,7 +17,7 @@ class PostIndexItem extends React.Component {
   render () {
     const { post } = this.props;
     return (
-      <li className="post-index-item" >
+      <li className="post-index-item">
         <NavLink to={`/api/posts/${post.id}`} className="post-title">
           {post.title}
         </NavLink>

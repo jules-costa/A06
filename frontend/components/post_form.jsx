@@ -30,6 +30,8 @@ class PostForm extends React.Component {
         title: "",
         body: ""
       })
+    ).then((post) =>
+      this.props.history.push('/api/posts')
     );
   }
 
